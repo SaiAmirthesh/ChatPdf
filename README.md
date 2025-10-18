@@ -3,6 +3,8 @@
 A Streamlit-based application that allows you to upload any PDF document and ask questions about its content using AI.
 Live link: [(https://chatpdfgen.streamlit.app/)]
 
+![ChatPDF](/images/Screenshot.png)  
+
 ## Features
 
 - 📄 Upload any PDF document

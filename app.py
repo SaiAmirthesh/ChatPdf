@@ -12,7 +12,6 @@ st.set_page_config(
     layout="wide"
 )
 
-
 if 'vectorstore' not in st.session_state:
     st.session_state.vectorstore = None
 if 'retriever' not in st.session_state:
