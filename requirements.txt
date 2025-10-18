@@ -8,4 +8,4 @@ pypdf
 python-dotenv
 chromadb
 tiktoken
-langchain-text-splitter
+langchain-text-splitters
