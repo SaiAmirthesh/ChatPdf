@@ -1,8 +1,8 @@
 import os
 import tempfile
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitters import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter  
+from langchain_core.documents import Document  
 from typing import List
 from utils.config import Config
 
