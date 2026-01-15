@@ -76,4 +76,29 @@ class RAGAgent:
         """Query the RAG agent with a question."""
         messages = [HumanMessage(content=question)]
         result = self.graph.invoke({"messages": messages})
-        return result['messages'][-1].content
+    
+        last_message = result['messages'][-1]
+
+        try:
+            if hasattr(last_message, 'content'):
+                content = last_message.content
+
+                if isinstance(content, list):
+                    texts = []
+                    for item in content:
+                        if isinstance(item, dict) and 'text' in item:
+                            texts.append(item['text'])
+                        elif isinstance(item, str):
+                            texts.append(item)
+
+                    if texts:
+                        return ' '.join(texts)
+
+                if isinstance(content, str):
+                    return content
+
+                return str(content)
+        except Exception as e:
+            return f"Error processing response: {str(e)}"
+
+        return str(last_message)
